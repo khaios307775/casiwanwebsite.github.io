@@ -1,0 +1,185 @@
+body {
+    background-image: url("https://raw.githubusercontent.com/khaios307775/Ge10website/refs/heads/main/Images/black.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+}
+
+.name, .events, .silliman {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.name {
+    border: none;
+    margin-left: 20px;
+    padding: 13px;
+}
+.events {
+    margin-left: auto;
+    padding: 13px;
+}
+.silliman {
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 13px;
+}
+
+.name:hover, .events:hover, .silliman:hover {
+    color: #b3b3b3;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    margin-top: 8rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    border: 1.5px solid white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+button:focus{
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.98);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 300px;
+    z-index: 1000;
+}
+
+.user-info .content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    padding: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.close:hover {
+    color: #b3b3b3;
+}
+
+.user-picture {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+}
+.fa {
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    width: 17px;
+    transition: color 0.3s ease;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.fa:hover {
+    color: #b3b3b3;
+}
+
+.fa-instagram {
+    background-color: #e4405f;
+    border-radius: 50%;
+    padding: 5px;
+}
+/*media*/
+@media (max-width: 768px) {
+    .user-info {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .buttons button {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+    }
+}

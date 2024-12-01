@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: monospace;
+    color: white;
+    background-color: rgba(5, 3, 15, 255);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Navigation Panel */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(10, 7, 29);
+    z-index: 1000;
+    padding: 18px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+.links li {
+    list-style: none;
+    display: inline-block;
+}
+.links li a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+.links li a:hover {
+    color: #00ffcc; 
+}
+.links li a.active {
+    color: #00ffcc; 
+    border-bottom: 2px solid #00ffcc; 
+    font-weight: bold; 
+}
+
+
+/*main area*/
+#background1 {
+    position: relative;
+    height: 100vh;
+    background: 
+        linear-gradient(to bottom, rgba(8, 8, 19, 0.8) 60%, rgba(3, 4, 1, 1) 100%), 
+        url("https://raw.githubusercontent.com/khaios307775/Ge10website/refs/heads/main/Images/purple-fotor-20241127203153.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+.mainText {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.tally {
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.info {
+    font-size: 15px;
+    max-width: 800px;
+    text-align: justify;
+}
+.reflection {
+    font-size: 14px;
+    text-align: justify;
+    
+}
+
+
+/*content area*/
+#background2 {
+    position: relative;
+    background-color:  rgba(5, 3, 15, 255);
+    padding: 50px 20px;
+    min-height: 100vh; 
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+}
+#background1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 86px; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(5, 3, 15, 255));
+    z-index: 2;
+}
+
+/*Data*/
+.title {
+    font-weight: bold;
+    font-size: 25px;
+}
+.organizer {
+    font-size: 16px;
+    font-style: italic;
+}
+.about {
+    font-size: 16px; 
+
+}
+
+/*picture slider1*/
+
+.imageSlides {
+    position: relative;
+    width: 48%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 0 auto; 
+}
+.images {
+    width: 100%; 
+    height: 300px;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    display: none; 
+    padding: 10px;
+    object-fit: cover;
+}
+.placeholder {
+    width: 100%; 
+    height: 300px;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    display: none; 
+    padding: 10px;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1; 
+}
+.images.show {
+    opacity: 1;
+}
+.images:first-child {
+    display: block; 
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/*buttons*/
+.prev1, .next1, .prev2, .next2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.prev1 {
+    left: 10px; 
+}
+.next1 {
+    right: 447px; 
+}
+.prev2 {
+    left: 447px;
+}
+.next2 {
+    right: 10px;
+}
+.prev1:hover, .next1:hover, .prev2:hover, .next2:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+}
+
+/* Event Boxes */
+.eventBox {
+    background-color: #111111; 
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+    max-width: 900px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto; 
+    z-index: 3; 
+    margin-bottom: 100px;
+}
+.eventBox:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(44, 32, 108, 0.6), 0 0 40px rgba(72, 53, 170, 0.8);
+}
+.eventContent {
+    flex: 1;
+}
+
+/*Modal images*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: #ff0000;
+}
+.modal-prev, .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+.modal-prev {
+    left: 10%;
+}
+.modal-next {
+    right: 10%;
+}
+.modal-prev:hover, .modal-next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+/*For other devices*/
+@media (max-width: 768px) {
+    .eventBox {
+        flex-direction: column; 
+        gap: 10px;
+    }
+    .imageSlides {
+        width: 100%; 
+    }
+}
+
