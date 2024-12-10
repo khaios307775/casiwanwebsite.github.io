@@ -46,6 +46,7 @@ header {
 .events {
     margin-left: auto;
     padding: 13px;
+    margin-right: 20px;
 }
 .silliman {
     margin-left: 10px;
@@ -106,11 +107,11 @@ button:focus{
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.98);
     color: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 300px;
+    width: 1300px;
     z-index: 1000;
 }
 
